@@ -45,6 +45,12 @@
             input.fadeIn(1500);
             input.css("display","block");
             return false;
+        });
+
+        input.on("keydown",function(event){
+            if( event.keyCode === 13 || event.which === 13 ){
+               
+            }
         })
     </script>
 </body>
