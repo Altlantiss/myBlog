@@ -1,0 +1,163 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="__PUBLIC__/css/swiper-3.4.2.min.css">
+    <link rel="stylesheet" href="__PUBLIC__/css/adminIndex.css">
+    <link rel="stylesheet" href="__PUBLIC__/font/iconfont.css">
+
+    <title>Document</title>
+</head>
+<body>
+    <div class="all">
+        <div class="head">
+            <p class="iconfont">&#xe637;</p>
+            <p id="logo">Altlantis's Personal Blog</p>
+            <a href="/Admin/Index/login">退出</a>
+            <p id="username">{$name}</p>
+            <div class="nav">
+                <ul>
+                    <li><a href="" class="active">首页</a></li>
+                    <li><a href="">文章管理</a></li>
+                    <li><a href="">会员管理</a></li>
+                    <li><a href="">关于我</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide main">
+                    <div class="border index">
+                        <p>大家好</p>
+                        <p>欢迎来到我的博客</p>
+                        <p>你没有看错</p>
+                        <p>这就是首页</p>
+                        <p>就是这么简单</p>
+                        <p>虽然很简单</p>
+                        <p>但是该有的功能都有了</p>
+                        <p>...</p>
+                        <p>其实还是我懒得做</p>
+                        <p>请直接下一页吧</p>
+                    </div>
+                </div>
+<!--/////////////////////////////////////////////////////////////////////////////-->
+                <div class="swiper-slide main">
+                    <div class="border html">
+                        <div class="btn">
+                            <div class="btnBox">
+                                <a href="" class="btnButton available btnAdd">添加</a>
+                                <a href="" class="btnButton btnDelete">删除</a>
+                                <a href="" class="btnButton btnUpdate">修改</a>
+                                <a href="" class="btnButton available">查找</a>
+                            </div>
+
+                            <div class="functionBox">
+                                <select class="add" name="class" id="class">
+                                    <option value ="0">HTML</option>
+                                    <option value ="1">PHP</option>
+                                </select>
+                                <input type="text" name="title" class="add addTitle" placeholder="文章标题">
+                                <textarea name="text" class="add text addText" cols="30" rows="10" placeholder="文章内容"></textarea>
+                                <div class="fbNews">
+                                    <a href="" class="chance">取消</a>
+                                    <a href="" class="ok">确认</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <ul class="ul newsUl">
+                            <foreach name="news" item="val">
+                                <li>
+                                    <div class="activeBox"></div>
+                                    <p class="inline id">文章id：<span>{$val.id}</span></p>
+                                    <p class="inline">文章分类：<span class="inline-class">{$val.class}</span></p>
+                                    <p class="inline">文章标题：<span>{$val.title}</span></p>
+                                    <p><span>{$val.text}</span></p>
+                                </li>
+                            </foreach>
+                        </ul>
+                        <div class="pageBox" id="newsPageBox">
+                            <ul>
+                                <li class="firstPage pages">首页</li>
+                                <li class="prePage pages">上一页</li>
+
+                                <li class="nextPage pages">下一页</li>
+                                <li class="lastPage pages">末页</li>
+                                <li class="pageText">总共 {$newsPage} 页</li>
+                                <li class="pageText">{$newsCount} 条数据</li>
+                            </ul>
+                        </div>
+                        <p class="page newsPage">{$newsPage}</p>
+                        <p class="count newsCount">{$newsCount}</p>
+                    </div>
+                </div>
+<!--//////////////////////////////////////////////////////////////////-->
+                <div class="swiper-slide main">
+                    <div class="border html">
+                        <div class="btn">
+                            <div class="btnBox">
+                                <a href="" class="btnButton available btnAdd">添加</a>
+                                <a href="" class="btnButton btnDelete">删除</a>
+                                <a href="" class="btnButton btnUpdate">修改</a>
+                                <a href="" class="btnButton available">查找</a>
+                            </div>
+
+                            <div class="functionBox">
+                                <input type="text" name="name" class="add addName" placeholder="会员名称">
+                                <input type="text" name="pwd" class="add addPwd" placeholder="会员名称">
+                                <div class="fbUser">
+                                    <a href="" class="chance">取消</a>
+                                    <a href="" class="ok">确认</a>
+                                </div>
+                            </div>
+
+                        </div>
+                        <ul class="ul userUl">
+                            <foreach name="user" item="val">
+                                <li>
+                                    <div class="activeBox"></div>
+                                    <p class="inline id">会员id：<span>{$val.id}</span></p>
+                                    <p class="inline">会员昵称：<span>{$val.name}</span></p>
+                                </li>
+                            </foreach>
+                        </ul>
+                        <div class="pageBox" id="userPageBox">
+                            <ul>
+                                <li class="firstPage pages">首页</li>
+                                <li class="prePage pages">上一页</li>
+
+                                <li class="nextPage pages">下一页</li>
+                                <li class="lastPage pages">末页</li>
+                                <li class="pageText">总共 {$userPage} 页</li>
+                                <li class="pageText">{$userCount} 条数据</li>
+                            </ul>
+                        </div>
+                        <p class="page userPage">{$userPage}</p>
+                        <p class="count userCount">{$userCount}</p>
+                    </div>
+                </div>
+
+                <div class="swiper-slide main">
+                    <div class="border index about">
+                        <p>本人学识渊博，经验丰富，代码风骚，效率恐怖。C/C++、Java、php无不精通，熟练掌握各种框架， 会DDOS一秒钟死一个站，，会注入，会上传，会Xss,会破解，会嗅探，会开发，会业务，会运维，渗透，调戏客服MM，无不精通，全面漏洞认识深刻，熟练掌握各种渗透理论，各种操作系统内核，认真学习过《黑客攻防技术宝典》《逆向工程》《游戏waigua攻防艺术》等专业书籍， 深山苦练5年，一天只睡4小时，脾气好，不喷人，操作虎，意识强，渗透快，shell多，能过狗，能过盾，听指挥， 千里之外取服务器首级，瞬息之间爆管理员，压安全狗如压草芥，电话通知出bug后，秒登vpn，千里之外定位问题，瞬息之间修复上线。祖传三代heike，电话通知后10秒钟上线，身体强壮可持续渗透7天7夜， 上千万肉鸡Ddos流量永不停歇，上至百度、谷歌、NASA、下至刷struts2，刷dedecms,什么都会玩!!! 本人身体强壮，健步如飞，可连续编程100小时不休息，讨论技术方案5小时不喝水，上至带项目、出方案，下至盗号威胁pm，什么都能干。备用电源，千兆光纤，无线网卡，永不断网，备用电脑一台，发电机二台（含柴油100升） 本人意识猥琐，技艺娴熟，0day丰富，能上各种渗透工具，怕延迟可直接接受电话指挥，语音指挥5小时不喝水.第一时间赶到众测现场，堵抢快，让漏洞，断后路， 魂斗罗一命通关，拳皇单手无限连，跑跑闭眼连漂，CS专业甩狙，扫雷12秒最高难度通关。 LOL对面20必投。现在，求一份扫地的工作</p>
+                    </div>
+                </div>
+            </div>
+            <!-- Add Arrows -->
+            <div class="swiper-button-next swiper-button"></div>
+            <div class="swiper-button-prev swiper-button"></div>
+        </div>
+    </div>
+
+    <script src="__PUBLIC__/js/swiper-3.4.2.min.js"></script>
+    <script src="__PUBLIC__/JQ/jquery-3.2.1.min.js"></script>
+    <script src="__PUBLIC__/JS/index.js"></script>
+    <script src="__PUBLIC__/JS/adminIndex.js"></script>
+
+
+
+</body>
+</html>
